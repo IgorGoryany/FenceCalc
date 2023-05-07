@@ -1,0 +1,19 @@
+//* TO %
+@function prc($pxOne, $pxTwo) {
+	$result: ($pxOne / $pxTwo) * 100%;
+	@return $result;
+}
+//* TO REM
+@function rem($px) {
+	$result: ($px / 16) + rem;
+	@return $result;
+}
+//* TO EM
+@function em($px) {
+	$result: ($px / 16) + em;
+	@return $result;
+}
+@function em1($pxWant, $pxBlock) {
+	$result: ($pxWant / $pxBlock) + em;
+	@return $result;
+}
