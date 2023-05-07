@@ -1,0 +1,24 @@
+<svg width="250" height="263" viewBox="0 0 250 263" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="125" cy="6" r="5" stroke="white" stroke-width="2"/>
+<path d="M18 6H121" stroke="white" stroke-width="2"/>
+<line x1="19" x2="19" y2="12" stroke="white" stroke-width="2"/>
+<circle cx="186" cy="236" r="5" stroke="white" stroke-width="2"/>
+<circle cx="6" cy="125" r="5" transform="rotate(-90 6 125)" stroke="white" stroke-width="2"/>
+<circle cx="6" cy="236" r="5" transform="rotate(-90 6 236)" stroke="white" stroke-width="2"/>
+<path d="M6 222L6 129" stroke="white" stroke-width="2"/>
+<circle cx="244" cy="125" r="5" transform="rotate(-90 244 125)" stroke="white" stroke-width="2"/>
+<circle cx="6" cy="6" r="5" transform="rotate(-90 6 6)" stroke="white" stroke-width="2"/>
+<path d="M6 113L6 10" stroke="white" stroke-width="2"/>
+<line y1="112" x2="12" y2="112" stroke="white" stroke-width="2"/>
+<path d="M244 120L244 20" stroke="white" stroke-width="2"/>
+<line x1="238" y1="19" x2="250" y2="19" stroke="white" stroke-width="2"/>
+<line x1="190.5" y1="237.134" x2="233.801" y2="262.134" stroke="white" stroke-width="2"/>
+<path d="M11 236L181 235.999" stroke="white" stroke-width="2"/>
+<path d="M0 223H12" stroke="white" stroke-width="2"/>
+<circle cx="244" cy="6" r="5" stroke="white" stroke-width="2"/>
+<path d="M137 6H239" stroke="white" stroke-width="2"/>
+<line x1="138" x2="138" y2="12" stroke="white" stroke-width="2"/>
+<circle cx="244" cy="236" r="5" transform="rotate(90 244 236)" stroke="white" stroke-width="2"/>
+<path d="M244 137V232" stroke="white" stroke-width="2"/>
+<line x1="250" y1="138" x2="238" y2="138" stroke="white" stroke-width="2"/>
+</svg>
