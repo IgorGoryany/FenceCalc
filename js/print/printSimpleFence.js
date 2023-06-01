@@ -65,7 +65,7 @@ export function printSimpleFence({
 				<div class="pattern${tubeInside}">${insideGate1} X 1</div>
 				${
 			insideGate2
-				? `<div class="pattern${tubeInside}">${insideGate2} X 2</div>`
+				? `<div class="pattern${tubeInside}">${insideGate2} X 1</div>`
 				: ''
 		}
 			</div>
