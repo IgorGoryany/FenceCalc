@@ -60,11 +60,11 @@ export function print15And25Fence({
 			</div>
 			<div class="inside">
 				<h2>${tubeInside} X ${tubeInside}</h2>
-				<div class="pattern25">${sideYRectangle} X ${rectangleCountY * 2 * countY * 2}</div>
-				<div class="pattern25">${sideYJumper} X ${(rectangleCountY + 1) * countY * 2}</div>
+				<div class="pattern${tube}">${sideYRectangle} X ${rectangleCountY * 2 * countY * 2}</div>
+				<div class="pattern${tube}">${sideYJumper} X ${(rectangleCountY + 1) * countY * 2}</div>
 				<br>
-				<div class="pattern25">${sideXRectangle} X ${rectangleCountX * 2 * (countX + gateCount) + rectangleGateCount * 2}</div>
-				<div class="pattern25">${sideXJumper} X ${(rectangleCountX + 1) * (countX + gateCount) + rectangleGateCount}</div>
+				<div class="pattern${tube}">${sideXRectangle} X ${rectangleCountX * 2 * (countX + gateCount) + rectangleGateCount * 2}</div>
+				<div class="pattern${tube}">${sideXJumper} X ${(rectangleCountX + 1) * (countX + gateCount) + rectangleGateCount}</div>
 				<br>
 				${rectangleSectionGate1
 			? `<div class="gateRectangle">${rectangleSectionGate1} X 2</div>
