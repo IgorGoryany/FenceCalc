@@ -59,7 +59,7 @@ export function calcLogicTo35Fence(pillar, tube, tubeInside, isBigX, isBigY) {
 		insideGate2:
 			lengthX >= 3400
 				? gate2 >= 2240
-					? (gate2 - 460 * 2 - tube) / 2
+					? (gate2 - 460 * 2) / 2
 					: lengthX - pillar * 4 - 460 - 525 - sideX
 				: false,
 
