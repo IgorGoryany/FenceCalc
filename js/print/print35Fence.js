@@ -1,42 +1,44 @@
 import {choosingImage} from '../support/choosingImage';
 import {handleCloseResult} from '../support/handleCloseResult';
-import {result, select, sideXInput, sideYInput, total} from '../variables/variables';
-import {handleCalcTotalDetailsList} from "../calc/handleCalcTotalDetailsList";
+import {result, select, sideXInput, total,} from '../variables/variables';
+import {handleCalcTotalDetailsList} from '../calc/handleCalcTotalDetailsList';
+import {sizesSupp} from "../support/sizesSupp";
+import {fenceSideChoose} from "../support/fenceSideChoose";
 
-export function print35Fence(
-	{
-		sideX,
-		sideY,
+export function print35Fence({
+	                             sideX,
+	                             sideY,
 
-		gate1,
-		gate2,
+	                             gate1,
+	                             gate2,
 
-		insideSideX,
+	                             insideSideX,
 
-		insideSideY,
+	                             insideSideY,
 
-		insideGate1,
-		insideGate2,
+	                             insideGate1,
+	                             insideGate2,
 
-		tube,
-		tubeInside,
+	                             insideSideXCount,
+	                             insideSideYCount,
+	                             insideGate1Count,
+	                             insideGate2Count,
 
-		countX,
-		countY,
-	}) {
+	                             tube,
+	                             tubeInside,
+
+	                             countX,
+	                             countY,
+	                             gateCount,
+                             }) {
 	const number = document.getElementsByClassName('result')
 		? document.getElementsByClassName('result').length + 1
 		: 1;
 
 	const image = choosingImage();
 
-	let sizes = `<span class="top">${sideXInput.value}</span>
-<span class="left">${sideYInput.value}</span>`;
+	const {sizes, isReverse} = sizesSupp(image);
 
-	if (image === '2000X4000') {
-		sizes = `<span class="top">${sideYInput.value}</span>
-	<span class="left">${sideXInput.value}</span>`;
-	}
 	let dop460 = 1;
 	if (+sideXInput.value >= 3400) {
 		dop460 = 3;
@@ -51,7 +53,9 @@ export function print35Fence(
 		<span class="close"></span>
 		<div class="scheme">
 			${sizes}
-			<img alt="Ограда" src="./img/${image}.svg" />
+			<img alt="Ограда" src="${image}" 
+			class="${fenceSideChoose(isReverse)}" 
+			/>
 			<span class="model">№&nbsp;${select.value}</span>
 		</div>
 	
@@ -66,17 +70,19 @@ export function print35Fence(
 
 			<div class="inside">
 				<h2>${tubeInside} X ${tubeInside}</h2>
-				<div class="pattern${tubeInside}">${insideSideY} X ${4 * countY}</div>
-				<div class="pattern${tubeInside}">${insideSideX} X ${2 * countX}</div>
-				<div class="pattern${tubeInside}">${insideGate1} X 2</div>
-				<div class="pattern${tubeInside}">460 X ${
-			2 * countX + 4 * countY + dop460
-		}</div>
+				<div class="pattern${tubeInside}">${insideSideY} X ${4 * insideSideYCount * countY}</div>
+				<div class="pattern${tubeInside}">${insideSideX} X ${2 * insideSideXCount * countX}</div>
+				<div class="pattern${tubeInside}">${insideGate1} X ${2 * insideGate1Count}</div>
 				${
 			insideGate2
-				? `<div class="pattern${tubeInside}">${insideGate2} X 2</div>`
+				? `<div class="pattern${tubeInside}">${insideGate2} X ${2 * insideGate2Count}</div>`
 				: ''
 		}
+				<div class="pattern${tubeInside}">460 X ${
+			((insideSideXCount + 1) * countX)
+			+ ((insideSideYCount + 1) * countY * 2)
+			+ insideGate1Count + insideGate2Count + gateCount
+		}</div>
 				</div>
 		</div>
 		
