@@ -13,6 +13,14 @@ body {
 	flex-direction: column;
 }
 
+input {
+	outline: 1px solid $main-bgc;
+
+	&:focus {
+		outline: 2px solid $main-bgc;
+	}
+}
+
 .wrapper {
 	padding: 0px 20px;
 	max-width: rem(1310);
@@ -21,6 +29,7 @@ body {
 	left: 50%;
 	transform: translateX(-50%);
 }
+
 .inpcontainer {
 	display: flex;
 
@@ -83,6 +92,45 @@ button {
 	border-radius: 5px;
 	margin-bottom: 131px;
 	margin-right: 8px;
+}
+
+#leftFence {
+	margin-right: 8px;
+	position: relative;
+
+	span {
+		display: block;
+		position: absolute;
+		border-radius: 5px;
+		left: 4px;
+		top: 12.5px;
+		width: 25px;
+		height: 25px;
+		background-color: $font-color;
+		z-index: 20;
+
+		&::before,
+		&::after {
+			content: '';
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 25px;
+			height: 3px;
+			background-color: #000;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+
+		&.active::before, &.active::after {
+			display: block;
+		}
+
+	}
 }
 
 #total-calc.active {
@@ -186,8 +234,12 @@ h1 {
 		width: 90%;
 	}
 
-	.revers {
+	.reverse {
 		transform: rotateY(180deg);
+	}
+
+	.reverseX {
+		transform: rotateX(180deg);
 	}
 
 	.model {
@@ -266,7 +318,7 @@ h1 {
 		display: block;
 		width: 40px;
 		height: 4px;
-		background-color: #fff;
+		background-color: $font-color;
 		transform: rotate(45deg);
 		position: relative;
 		left: 5px;
@@ -278,7 +330,7 @@ h1 {
 		display: block;
 		width: 40px;
 		height: 4px;
-		background-color: #fff;
+		background-color: $font-color;
 		transform: rotate(-45deg);
 		position: relative;
 		left: 5px;
@@ -312,13 +364,14 @@ hr {
 	}
 }
 
-.total-id {
+#total {
 	display: none;
 
 	&.active {
 		display: block;
 	}
 }
+
 .total {
 	display: flex;
 	justify-content: center;
@@ -352,6 +405,7 @@ hr {
 		text-align: center;
 		font-size: rem(30);
 		font-weight: bold;
+
 		&::after {
 			content: "";
 			background-color: #fff;
@@ -377,8 +431,10 @@ hr {
 		text-align: center;
 	}
 }
+
 .gateRectangle {
 	position: relative;
+
 	&::before {
 		content: "(";
 		position: absolute;
@@ -386,6 +442,7 @@ hr {
 		left: -25px;
 		top: -8px;
 	}
+
 	&::after {
 		content: ")";
 		position: absolute;
@@ -393,6 +450,11 @@ hr {
 		right: -8px;
 		top: -8px;
 	}
+}
+
+#result.otherTheme {
+	background-color: #fff;
+	color: black;
 }
 
 @import "_media";
