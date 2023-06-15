@@ -61,7 +61,6 @@ export function print15And25Fence({
 			</div>
 			<div class="inside">
 				<h2>${tubeInside} X ${tubeInside}</h2>
-<<<<<<< HEAD
 				
 				<div class="pattern${tubeInside}">${sideYRectangle} X ${
 			rectangleCountY * 4 * countY
@@ -72,12 +71,7 @@ export function print15And25Fence({
 				<div class="pattern${tubeInside}">${sideYJumper} X ${
 			(rectangleCountY + 1) * countY * 2
 		}</div>
-=======
-				<div class="pattern${tube}">${sideYRectangle} X ${rectangleCountY * 2 * countY * 2}</div>
-				<div class="pattern${tube}">${sideYJumper} X ${(rectangleCountY + 1) * countY * 2}</div>
->>>>>>> f3cf159261f989e5b1148ffa6e4fdc6eceea5e6f
 				<br>
-<<<<<<< HEAD
 				<div class="pattern${tubeInside}">${sideXRectangle} X ${
 			rectangleCountX * 2 * (countX + gateCount) + rectangleGateCount * 2
 		}</div>
@@ -90,10 +84,6 @@ export function print15And25Fence({
 					${sideXJumper} X 
 					${(rectangleCountX + 1) * (countX + gateCount) + rectangleGateCount + 2}
 				</div> 
-=======
-				<div class="pattern${tube}">${sideXRectangle} X ${rectangleCountX * 2 * (countX + gateCount) + rectangleGateCount * 2}</div>
-				<div class="pattern${tube}">${sideXJumper} X ${(rectangleCountX + 1) * (countX + gateCount) + rectangleGateCount}</div>
->>>>>>> f3cf159261f989e5b1148ffa6e4fdc6eceea5e6f
 				<br>
 				${
 			rectangleSectionGate1
