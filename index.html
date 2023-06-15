@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Оградный калькулятор</title>
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./scss/style.scss">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
 			<option value="22">№ 22</option>
 			<option value="23">№ 23</option>
 			<option value="24">№ 24</option>
-			<option value="25" selected>№ 25</option>
+			<option value="25">№ 25</option>
 			<option value="30">№ 30</option>
 			<option value="31">№ 31</option>
 			<option value="32">№ 32</option>
@@ -48,15 +48,19 @@
 			<input id="width" placeholder="Сторона с калиткой в mm" type="tel">
 			<input id="height" placeholder="Другая сторона в mm" type="tel">
 		</div>
+
 		<div class="btn-container">
 			<button id="total-calc">Список деталей</button>
+			<button id="leftFence"><span class="active"></span>левая</button>
 			<button id="calc">Считать</button>
 		</div>
-		<div id="total" class="total-id"></div>
+
+		<div id="total"></div>
 
 		<div id="result">
 
 		</div>
+
 	</div>
 </div>
 <footer class="footer">
