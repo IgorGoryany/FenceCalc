@@ -1,7 +1,9 @@
 import {choosingImage} from '../support/choosingImage';
 import {handleCloseResult} from '../support/handleCloseResult';
-import {result, select, sideXInput, sideYInput, total} from '../variables/variables';
-import {handleCalcTotalDetailsList} from "../calc/handleCalcTotalDetailsList";
+import {result, select, total,} from '../variables/variables';
+import {handleCalcTotalDetailsList} from '../calc/handleCalcTotalDetailsList';
+import {sizesSupp} from "../support/sizesSupp";
+import {fenceSideChoose} from "../support/fenceSideChoose";
 
 export function print15And25Fence({
 	                                  sideX,
@@ -9,8 +11,10 @@ export function print15And25Fence({
 	                                  gate1,
 	                                  gate2,
 	                                  sideXRectangle,
+	                                  halfXRectangle,
 	                                  sideXJumper,
 	                                  sideYRectangle,
+	                                  halfYRectangle,
 	                                  sideYJumper,
 	                                  tube,
 	                                  tubeInside,
@@ -23,7 +27,7 @@ export function print15And25Fence({
 	                                  rectangleInsideGate1,
 	                                  rectangleSectionGate2,
 	                                  rectangleInsideGate2,
-	                                  rectangleGateCount
+	                                  rectangleGateCount,
                                   }) {
 	const number = document.getElementsByClassName('result')
 		? document.getElementsByClassName('result').length + 1
@@ -31,13 +35,8 @@ export function print15And25Fence({
 
 	const image = choosingImage();
 
-	let sizes = `<span class="top">${sideXInput.value}</span>
-<span class="left">${sideYInput.value}</span>`;
+	const {sizes, isReverse} = sizesSupp(image);
 
-	if (image === '2000X4000') {
-		sizes = `<span class="top">${sideYInput.value}</span>
-	<span class="left">${sideXInput.value}</span>`;
-	}
 	result.insertAdjacentHTML(
 		'afterbegin',
 
@@ -47,7 +46,9 @@ export function print15And25Fence({
 		<span class="close"></span>
 		<div class="scheme">
 			${sizes}
-			<img alt="Ограда" src="./img/${image}.svg">
+			<img alt="Ограда" src="${image}" 
+			class="${fenceSideChoose(isReverse)}" 
+			/>
 			<span class="model">№&nbsp;${select.value}</span>
 		</div>
 		<div class="values">
@@ -60,17 +61,47 @@ export function print15And25Fence({
 			</div>
 			<div class="inside">
 				<h2>${tubeInside} X ${tubeInside}</h2>
+<<<<<<< HEAD
+				
+				<div class="pattern${tubeInside}">${sideYRectangle} X ${
+			rectangleCountY * 4 * countY
+		}</div>
+				
+				${halfYRectangle ? `<div class="pattern${tubeInside}">${halfYRectangle} X 8</div>` : ''}
+				
+				<div class="pattern${tubeInside}">${sideYJumper} X ${
+			(rectangleCountY + 1) * countY * 2
+		}</div>
+=======
 				<div class="pattern${tube}">${sideYRectangle} X ${rectangleCountY * 2 * countY * 2}</div>
 				<div class="pattern${tube}">${sideYJumper} X ${(rectangleCountY + 1) * countY * 2}</div>
+>>>>>>> f3cf159261f989e5b1148ffa6e4fdc6eceea5e6f
 				<br>
+<<<<<<< HEAD
+				<div class="pattern${tubeInside}">${sideXRectangle} X ${
+			rectangleCountX * 2 * (countX + gateCount) + rectangleGateCount * 2
+		}</div>
+				
+				${halfXRectangle
+			? `<div class="pattern${tubeInside}">${halfXRectangle} X ${4 + (gateCount * 4)}</div>`
+			: ''} 
+				
+				<div class="pattern${tubeInside}">
+					${sideXJumper} X 
+					${(rectangleCountX + 1) * (countX + gateCount) + rectangleGateCount + 2}
+				</div> 
+=======
 				<div class="pattern${tube}">${sideXRectangle} X ${rectangleCountX * 2 * (countX + gateCount) + rectangleGateCount * 2}</div>
 				<div class="pattern${tube}">${sideXJumper} X ${(rectangleCountX + 1) * (countX + gateCount) + rectangleGateCount}</div>
+>>>>>>> f3cf159261f989e5b1148ffa6e4fdc6eceea5e6f
 				<br>
-				${rectangleSectionGate1
-			? `<div class="gateRectangle">${rectangleSectionGate1} X 2</div>
-				<div>${rectangleInsideGate1} X 2</div>`
-			: `<div class="gateRectangle">${rectangleSectionGate2} X 2</div>
-				<div>${rectangleInsideGate2} X 2</div>`}
+				${
+			rectangleSectionGate1
+				? `<div class="gateRectangle pattern${tubeInside}">${rectangleSectionGate1} X 2</div>
+				<div class="pattern${tubeInside}">${rectangleInsideGate1} X 2</div>`
+				: `<div class="gateRectangle pattern${tubeInside}">${rectangleSectionGate2} X 2</div>
+				<div class="pattern${tubeInside}">${rectangleInsideGate2} X 2</div>`
+		}
 			</div>
 		</div>
 	</div>
