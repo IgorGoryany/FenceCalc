@@ -1,33 +1,29 @@
-import { choosingImage } from '../support/choosingImage';
-import { handleCloseResult } from '../support/handleCloseResult';
-import { sideXInput, sideYInput, total, select, result } from '../variables/variables';
-import {handleCalcTotalDetailsList} from "../calc/handleCalcTotalDetailsList";
+import {choosingImage} from '../support/choosingImage';
+import {handleCloseResult} from '../support/handleCloseResult';
+import {result, select, total,} from '../variables/variables';
+import {handleCalcTotalDetailsList} from '../calc/handleCalcTotalDetailsList';
+import {sizesSupp} from "../support/sizesSupp";
+import {fenceSideChoose} from "../support/fenceSideChoose";
 
 export function printFrameFence({
-	sideX,
-	sideY,
+	                                sideX,
+	                                sideY,
 
-	gate1,
-	gate2,
+	                                gate1,
+	                                gate2,
 
-	tube,
+	                                tube,
 
-	countX,
-	countY,
-}) {
+	                                countX,
+	                                countY,
+                                }) {
 	const number = document.getElementsByClassName('result')
 		? document.getElementsByClassName('result').length + 1
 		: 1;
 
 	const image = choosingImage();
 
-	let sizes = `<span class="top">${sideXInput.value}</span>
-<span class="left">${sideYInput.value}</span>`;
-
-	if (image === '2000X4000') {
-		sizes = `<span class="top">${sideYInput.value}</span>
-	<span class="left">${sideXInput.value}</span>`;
-	}
+	const {sizes, isReverse} = sizesSupp(image);
 
 	result.insertAdjacentHTML(
 		'afterbegin',
@@ -38,7 +34,9 @@ export function printFrameFence({
 		<span class="close"></span>
 		<div class="scheme">
 			${sizes}
-			<img alt="Ограда" src="./img/${image}.svg" />
+			<img alt="Ограда" src="${image}" 
+			class="${fenceSideChoose(isReverse)}" 
+			/>
 			<span class="model">№&nbsp;${select.value}</span>
 		</div>
 	

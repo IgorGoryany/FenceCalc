@@ -45,7 +45,7 @@ export function distributionCalcFence(modelNum, isBigX, isBigY) {
 	}
 
 	if (modelNum === 15) {
-		print15And25Fence(calcLogicTo15And25Fence(40, 25, 20, 240, isBigX, isBigY));
+		print15And25Fence(calcLogicTo15And25Fence(40, 25, 25, 240, isBigX, isBigY));
 
 		return;
 	}

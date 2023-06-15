@@ -104,6 +104,3 @@ function insideCalcLogic(length, tube, jumper) {
 	}
 	return [rectangleLength, Math.round(jumperLength), rectangleCount];
 }
-
-
-
